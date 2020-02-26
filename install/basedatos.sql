@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1:3308
--- Tiempo de generación: 25-02-2020 a las 11:40:55
--- Versión del servidor: 5.7.28
--- Versión de PHP: 7.3.12
+-- Servidor: 127.0.0.1:3306
+-- Tiempo de generación: 26-02-2020 a las 17:11:03
+-- Versión del servidor: 5.7.26
+-- Versión de PHP: 7.2.18
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -74,21 +74,29 @@ CREATE TABLE IF NOT EXISTS `mensajes` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `usuario`
+-- Estructura de tabla para la tabla `users`
 --
 
-DROP TABLE IF EXISTS `usuario`;
-CREATE TABLE IF NOT EXISTS `usuario` (
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
   `id` int(12) NOT NULL AUTO_INCREMENT,
   `user` varchar(250) NOT NULL,
-  `pass` varchar(250) NOT NULL,
+  `password` varchar(250) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `verificado` tinyint(4) NOT NULL,
-  `token` varchar(100) NOT NULL,
   `rol` varchar(255) NOT NULL,
   `departamento` varchar(255) NOT NULL,
+  `updated_at` timestamp NOT NULL,
+  `created_at` timestamp NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `users`
+--
+
+INSERT INTO `users` (`id`, `user`, `password`, `email`, `rol`, `departamento`, `updated_at`, `created_at`) VALUES
+(1, 'adri', '1234abcd', 'adri@adri.com', 'Profesor', 'Informatica', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(2, 'pepe', '$2y$10$xzk8E736vt3eKtdxrH1yGe0.aLaWmBVO.GtL6LCqSwk4vRmWNXvq.', 'pepe@gmail.com', 'Profesor', 'administracion', '2020-02-26 16:01:24', '2020-02-26 16:01:24');
 
 --
 -- Restricciones para tablas volcadas
@@ -98,7 +106,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 -- Filtros para la tabla `incidencias`
 --
 ALTER TABLE `incidencias`
-  ADD CONSTRAINT `incidencias_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id`);
+  ADD CONSTRAINT `incidencias_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `users` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
