@@ -11,13 +11,22 @@
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
+@if(count($errors) > 0)
+    <div style="color:red">
+        @foreach ($errors->all() as $message)
+            <ul>
+                <li>{{$message}}</li>
+            </ul>
+        @endforeach
+    </div>
+@endif
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nombre') }}</label>
+                            <label for="user" class="col-md-4 col-form-label text-md-right">{{ __('Nombre') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
+                                <input id="user" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="user" value="{{ old('user') }}" required autofocus>
 
-                                @if ($errors->has('name'))
+                                @if ($errors->has('user'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('name') }}</strong>
                                     </span>
