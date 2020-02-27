@@ -11,15 +11,6 @@
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
-@if(count($errors) > 0)
-    <div style="color:red">
-        @foreach ($errors->all() as $message)
-            <ul>
-                <li>{{$message}}</li>
-            </ul>
-        @endforeach
-    </div>
-@endif
                         <div class="form-group row">
                             <label for="user" class="col-md-4 col-form-label text-md-right">{{ __('Nombre') }}</label>
 

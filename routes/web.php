@@ -21,3 +21,5 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/incidencias', 'UserController@incidencias')->name('incidencias');
+
+Route::post('guardar', 'UserController@guardar');
