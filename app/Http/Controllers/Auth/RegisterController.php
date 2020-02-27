@@ -54,6 +54,7 @@ class RegisterController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'rol' => ['string', 'max:255'],
             'departamento' => ['string', 'max:255'],
+            'remember_token' => ['string', 'max:255'],
         ]);
     }
 
@@ -71,6 +72,7 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'rol' => 'Profesor',
             'departamento' => $data['departamento'],
+            'remember_token' => null,
         ]);
     }
 }
