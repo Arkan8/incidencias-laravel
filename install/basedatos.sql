@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 26-02-2020 a las 17:11:03
--- Versión del servidor: 5.7.26
--- Versión de PHP: 7.2.18
+-- Tiempo de generación: 27-02-2020 a las 12:28:37
+-- Versión del servidor: 8.0.18
+-- Versión de PHP: 7.3.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -38,8 +38,17 @@ CREATE TABLE IF NOT EXISTS `incidencias` (
   `tipo` varchar(255) NOT NULL,
   `aula` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `id_usuario` (`id_usuario`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  KEY `id_usuario` (`id_usuario`),
+  KEY `id_usuario_2` (`id_usuario`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `incidencias`
+--
+
+INSERT INTO `incidencias` (`id`, `id_usuario`, `asunto`, `descripcion`, `fechacreacion`, `tipo`, `aula`) VALUES
+(1, 1, 'Ordenadores', 'Se han averiado unos ordenadores por humedad', '27-02-2020', 'Urgente', '23'),
+(2, 2, 'Pantallas', 'Se ha accidentado un alumno contra una pantalla', '27-02-2020', 'Urgente', '12');
 
 -- --------------------------------------------------------
 
@@ -87,16 +96,18 @@ CREATE TABLE IF NOT EXISTS `users` (
   `departamento` varchar(255) NOT NULL,
   `updated_at` timestamp NOT NULL,
   `created_at` timestamp NOT NULL,
+  `remember_token` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `users`
 --
 
-INSERT INTO `users` (`id`, `user`, `password`, `email`, `rol`, `departamento`, `updated_at`, `created_at`) VALUES
-(1, 'adri', '1234abcd', 'adri@adri.com', 'Profesor', 'Informatica', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(2, 'pepe', '$2y$10$xzk8E736vt3eKtdxrH1yGe0.aLaWmBVO.GtL6LCqSwk4vRmWNXvq.', 'pepe@gmail.com', 'Profesor', 'administracion', '2020-02-26 16:01:24', '2020-02-26 16:01:24');
+INSERT INTO `users` (`id`, `user`, `password`, `email`, `rol`, `departamento`, `updated_at`, `created_at`, `remember_token`) VALUES
+(1, 'adri', '1234abcd', 'adri@adri.com', 'Profesor', 'Informatica', '0000-00-00 00:00:00', '0000-00-00 00:00:00', ''),
+(2, 'pepe', '$2y$10$xzk8E736vt3eKtdxrH1yGe0.aLaWmBVO.GtL6LCqSwk4vRmWNXvq.', 'pepe@gmail.com', 'Profesor', 'administracion', '2020-02-26 16:01:24', '2020-02-26 16:01:24', 'Cov5Q6luoFUO7NJaslflI9L5svGcmZbq0scUGYBHcGYWd6XA4Y9Fg7Le55Yd'),
+(3, 'manolo', '$2y$10$gdybRBcjbZlhBsSIFWEqhup7L.IaN52YI.0mSiBdIiuRSb9rJqOXG', 'manolo@gmail.com', 'Profesor', 'administracion', '2020-02-27 00:35:17', '2020-02-27 00:35:17', '1vWCfBZVZTFow5a456HbvLOtSQTtUBaeGcT695MkDlm0qCC4ybP0oUdfyabs');
 
 --
 -- Restricciones para tablas volcadas
