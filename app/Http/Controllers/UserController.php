@@ -36,4 +36,10 @@ class UserController extends Controller
 
         return redirect()->action('UserController@incidencias');
     }
+
+    public function eliminar($id){
+        $incidencia = DB::table('incidencias')->where('id', $id)->delete();
+
+        return redirect()->action('UserController@incidencias')->with('status', 'Incidencia eliminada correctamente');
+    }
 }

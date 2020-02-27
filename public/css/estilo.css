@@ -1,0 +1,12 @@
+a:hover{
+    text-decoration: none;
+}
+
+.d-flex:hover{
+    background-color: gainsboro;
+}
+
+#letrasInicio{
+    font-size: 2em;
+    color: black;
+}

@@ -111,7 +111,7 @@
                                 <td>{{ $incidencia->fechacreacion }}</td>
                                 <td>{{ $incidencia->tipo }}</td>
                                 <td>{{ $incidencia->aula }}</td>
-                                <td><button class="btn-danger"> Eliminar </button>
+                                <td><a href="eliminar/{{ $incidencia->id }}" onclick="return confirm('¿Seguro que desea borrar la incidencia {{ $incidencia->id }}?')" class="btn btn-danger" style="color: white">Eliminar</a>
                             </tr>
                         @endforeach
                     </table>

@@ -23,3 +23,5 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('/incidencias', 'UserController@incidencias')->name('incidencias');
 
 Route::post('guardar', 'UserController@guardar');
+
+Route::get('eliminar/{id}', 'UserController@eliminar');

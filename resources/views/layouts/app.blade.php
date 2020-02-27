@@ -18,6 +18,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/estilo.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -51,7 +52,7 @@
                         @else
 
                             <li class="nav-item">
-                                <a class="nav-link" href="">
+                                <a class="nav-link" href="/">
                                     Inicio
                                 </a>
                             </li>
