@@ -9,7 +9,6 @@
 
                 <button class="btn" data-toggle="modal" data-target="#dialogo" style="box-shadow: 0px 0px 1.5px black">Nueva incidencia</button>
                 <!-- MODAL PARA NUEVA INCIDENCIA -->
-
                 <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
@@ -17,11 +16,20 @@
                         </div>
                     @endif
 
+                    <!-- ///////////////// Función de crear y editar ///////////////// -->
+
                     <div class="modal fade" id="dialogo" role="dialog">
                     <div class="modal-dialog">
                     <div class="modal-content">
                     <div class="modal-header">
-                    <h4 class="modal-title"> Nueva incidencia </h4>
+
+                    @if(isset($editarIncidencia) && is_object($editarIncidencia))
+                        <h4 class="modal-title"> Editar incidencia </h4>
+                    @else
+                        <h4 class="modal-title"> Nueva incidencia </h4>
+                    @endif
+                    
+                
                     <button type="button" class="btn btn-danger m-t-10" data-dismiss="modal"> X</button>
 
                     </div>
@@ -33,7 +41,7 @@
                                 <label for="asunto" class="col-md-4 col-form-label text-md-right">{{ __('Asunto') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="asunto" type="text" class="form-control" name="asunto" required>
+                                    <input id="asunto" type="text" class="form-control" name="asunto" @if(isset($editarIncidencia)) value="{{ $editarIncidencia->asunto or '' }}" @endif  required>
                                 </div>
                             </div>
 
@@ -41,8 +49,7 @@
                                 <label for="descripcion" class="col-md-4 col-form-label text-md-right">{{ __('Descripción') }}</label>
 
                                 <div class="col-md-6">
-                                    <textarea name="descripcion" id="descripcion" rows="7" style="resize: none; width: 100%;"></textarea>
-                                    <!-- <input id="asunto" type="text" class="form-control" name="asunto" required> -->
+                                    <textarea name="descripcion" id="descripcion" @if(isset($editarIncidencia)) value="{{ $editarIncidencia->descripcion or '' }}" @endif rows="7" style="resize: none; width: 100%;"></textarea>
                                 </div>
                             </div>
 
@@ -55,7 +62,6 @@
                                         <option value="importante">Importante</option>
                                         <option value="leve">Leve</option>
                                         </select>
-                                    <!-- <input id="asunto" type="text" class="form-control" name="asunto" required> -->
                                 </div>
                             </div>
 
@@ -63,7 +69,7 @@
                                 <label for="aula" class="col-md-4 col-form-label text-md-right">{{ __('Aula') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="aula" type="text" class="form-control" name="aula" required>
+                                    <input id="aula" type="text" @if(isset($editarIncidencia)) value="{{ $editarIncidencia->aula or '' }}" @endif class="form-control" name="aula" required>
                                 </div>
                             </div>
                         <hr>
@@ -89,6 +95,7 @@
                     </div>
                     </div>
 
+                    <!-- ///////////////// Fin de función de crear y editar ///////////////// -->
 
                     <table class="table table-striped">
                         <tr>
@@ -111,7 +118,10 @@
                                 <td>{{ $incidencia->fechacreacion }}</td>
                                 <td>{{ $incidencia->tipo }}</td>
                                 <td>{{ $incidencia->aula }}</td>
-                                <td><a href="eliminar/{{ $incidencia->id }}" onclick="return confirm('¿Seguro que desea borrar la incidencia {{ $incidencia->id }}?')" class="btn btn-danger" style="color: white">Eliminar</a>
+                                <td>
+                                <a data-toggle="modal" data-target="#dialogo" href="{{ action('UserController@editar', ['id' => $incidencia->id]) }}" class="btn btn-info" name="btn-editar" style="color: white">Editar</a>
+                                <a href="eliminar/{{ $incidencia->id }}" onclick="return confirm('¿Seguro que desea borrar la incidencia {{ $incidencia->id }}?')" class="btn btn-danger" style="color: white">Eliminar</a>
+                                </td>
                             </tr>
                         @endforeach
                     </table>

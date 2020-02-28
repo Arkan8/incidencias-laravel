@@ -25,3 +25,5 @@ Route::get('/incidencias', 'UserController@incidencias')->name('incidencias');
 Route::post('guardar', 'UserController@guardar');
 
 Route::get('eliminar/{id}', 'UserController@eliminar');
+
+Route::get('editar/{id}', 'UserController@editar');

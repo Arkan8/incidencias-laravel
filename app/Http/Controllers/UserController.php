@@ -42,4 +42,14 @@ class UserController extends Controller
 
         return redirect()->action('UserController@incidencias')->with('status', 'Incidencia eliminada correctamente');
     }
+
+    public function editar($id){
+        $editarIncidencia = DB::table('incidencias')->where('id', $id)->first();
+        $incidencias = DB::table('incidencias')->paginate(5);
+
+        return view('incidencias', [
+            'editarIncidencia' => $editarIncidencia,
+            'incidencias' => $incidencias
+        ]);
+    }
 }
