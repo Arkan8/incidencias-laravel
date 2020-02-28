@@ -27,3 +27,4 @@ Route::post('guardar', 'UserController@guardar');
 Route::get('eliminar/{id}', 'UserController@eliminar');
 
 Route::get('editar/{id}', 'UserController@editar');
+Route::post('actualizar', 'UserController@actualizar');

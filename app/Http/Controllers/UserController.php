@@ -16,7 +16,7 @@ class UserController extends Controller
         $incidencias = DB::table('incidencias')->paginate(5);
 
         return view('incidencias', [
-            'incidencias' => $incidencias
+            'incidencias' => $incidencias,
         ]);
     }
 
@@ -45,11 +45,21 @@ class UserController extends Controller
 
     public function editar($id){
         $editarIncidencia = DB::table('incidencias')->where('id', $id)->first();
-        $incidencias = DB::table('incidencias')->paginate(5);
 
         return view('incidencias', [
             'editarIncidencia' => $editarIncidencia,
-            'incidencias' => $incidencias
         ]);
+    }
+
+    public function actualizar(Request $request){
+        $id = $request->input('id');
+        $incidenciaEditada = DB::table('incidencias')->where('id', $id)
+                                                    ->update(array(
+                                                        'asunto' => $request->input('asuntoEditar'),
+                                                        'descripcion' => $request->input('descripcionEditar'),
+                                                        'tipo' => $request->input('tipo'),
+                                                        'aula' => $request->input('aulaEditar'),
+                                                    ));
+        return redirect()->action('UserController@incidencias')->with('status', 'Incidencia editada correctamente');
     }
 }
