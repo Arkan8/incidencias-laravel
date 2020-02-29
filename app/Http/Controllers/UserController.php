@@ -35,8 +35,11 @@ class UserController extends Controller
     }
 
     public function logs(){
+        $logs = DB::table('activity_log')->orderBy('id', 'desc')->paginate(5);
 
-        return view('logs');
+        return view('logs', [
+            'logs' => $logs
+        ]);
     }
 
     public function guardar(Request $request){
