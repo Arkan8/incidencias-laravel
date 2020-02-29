@@ -34,7 +34,7 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Enviar enlace para restablece la contraseña') }}
+                                    {{ __('Enviar enlace para restablecer la contraseña') }}
                                 </button>
                             </div>
                         </div>
