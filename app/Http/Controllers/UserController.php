@@ -64,10 +64,24 @@ class UserController extends Controller
         ]);
     }
 
+    public function ver($id){
+        $usuario = DB::table('users')->where('id', $id)->first();
+
+        return view('ver', [
+            'usuario' => $usuario,
+        ]);
+    }
+
     public function eliminar($id){
         $incidencia = DB::table('incidencias')->where('id', $id)->delete();
 
         return redirect()->action('UserController@incidencias')->with('status', 'Incidencia eliminada correctamente');
+    }
+
+    public function eliminarUser($id){
+        $usuario = DB::table('users')->where('id', $id)->delete();
+
+        return redirect()->action('UserController@usuarios')->with('status', 'Usuario eliminado correctamente');
     }
 
     public function editar($id){

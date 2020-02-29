@@ -195,7 +195,7 @@
                                 <td>{{ $incidencia->tipo }}</td>
                                 <td>{{ $incidencia->aula }}</td>
                                 <td>
-                                <a href="detalle/{{ $incidencia->id }}" class="btn btn-primary" style="color: white">Ver</a>
+                                <a href="detalle/{{ $incidencia->id }}" class="btn btn-primary" style="color: white">Detalle</a>
                                 <a data-asunto="{{ $incidencia->asunto }}" data-descripcion="{{ $incidencia->descripcion }}" data-aula="{{ $incidencia->aula }}" data-toggle="modal" data-target="#modalEditar" href="{{ url('/editar', $incidencia->id) }}" class="btn btn-info" name="btn-editar" style="color: white">Editar</a>
                                 <a href="eliminar/{{ $incidencia->id }}" onclick="return confirm('¿Seguro que desea borrar la incidencia {{ $incidencia->id }}?')" class="btn btn-danger" style="color: white">Eliminar</a>
                                 </td>
