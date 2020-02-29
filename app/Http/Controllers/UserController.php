@@ -20,6 +20,25 @@ class UserController extends Controller
         ]);
     }
 
+    public function usuarios(){
+
+        $usuarios = DB::table('users')->paginate(5);
+
+        return view('usuarios', [
+            'usuarios' => $usuarios,
+        ]);
+    }
+
+    public function mensajes(){
+
+        return view('mensajes');
+    }
+
+    public function logs(){
+
+        return view('logs');
+    }
+
     public function guardar(Request $request){
 
         $id_usuario = Auth::id();
@@ -35,6 +54,14 @@ class UserController extends Controller
         ));
 
         return redirect()->action('UserController@incidencias');
+    }
+
+    public function detalle($id){
+        $incidencia = DB::table('incidencias')->where('id', $id)->first();
+
+        return view('detalle', [
+            'incidencia' => $incidencia,
+        ]);
     }
 
     public function eliminar($id){

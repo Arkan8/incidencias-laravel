@@ -12,6 +12,9 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/script.js') }}" defer></script>
+    <script src="{{ asset('vendor/unisharp/laravel-ckeditor/ckeditor.js') }}"></script>
+
+    @yield('js')
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -59,19 +62,25 @@
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="incidencias">
+                                <a class="nav-link" href="/incidencias">
                                     Incidencias
                                 </a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="">
+                                <a class="nav-link" href="/usuarios">
+                                    Usuarios
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="/mensajes">
                                     Mensajes
                                 </a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="">
+                                <a class="nav-link" href="/logs">
                                     Logs
                                 </a>
                             </li>

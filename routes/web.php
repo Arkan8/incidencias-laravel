@@ -20,11 +20,15 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
-Route::get('/incidencias', 'UserController@incidencias')->name('incidencias');
+Route::get('incidencias', 'UserController@incidencias')->name('incidencias');
+Route::get('usuarios', 'UserController@usuarios')->name('usuarios');
+Route::get('mensajes', 'UserController@mensajes')->name('mensajes');
+Route::get('logs', 'UserController@logs')->name('logs');
 
 Route::post('guardar', 'UserController@guardar');
 
 Route::get('eliminar/{id}', 'UserController@eliminar');
+Route::get('detalle/{id}', 'UserController@detalle');
 
 Route::get('editar/{id}', 'UserController@editar');
 Route::post('actualizar', 'UserController@actualizar');

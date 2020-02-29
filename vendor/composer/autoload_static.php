@@ -54,6 +54,10 @@ class ComposerStaticInit9c01b18047149001a433e865e12c674e
             'Whoops\\' => 7,
             'Webmozart\\Assert\\' => 17,
         ),
+        'U' => 
+        array (
+            'Unisharp\\Ckeditor\\' => 18,
+        ),
         'T' => 
         array (
             'TijsVerkoyen\\CssToInlineStyles\\' => 31,
@@ -192,6 +196,10 @@ class ComposerStaticInit9c01b18047149001a433e865e12c674e
         'Webmozart\\Assert\\' => 
         array (
             0 => __DIR__ . '/..' . '/webmozart/assert/src',
+        ),
+        'Unisharp\\Ckeditor\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/unisharp/laravel-ckeditor',
         ),
         'TijsVerkoyen\\CssToInlineStyles\\' => 
         array (
@@ -473,16 +481,14 @@ class ComposerStaticInit9c01b18047149001a433e865e12c674e
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
-        'App\\Http\\Controllers\\ControladorRecursos' => __DIR__ . '/../..' . '/app/Http/Controllers/ControladorRecursos.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
-        'App\\Http\\Controllers\\Enter' => __DIR__ . '/../..' . '/app/Http/Controllers/Enter.php',
-        'App\\Http\\Controllers\\PruebasController' => __DIR__ . '/../..' . '/app/Http/Controllers/PruebasController.php',
+        'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
+        'App\\Http\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\CheckForMaintenanceMode' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckForMaintenanceMode.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
-        'App\\Http\\Middleware\\TestYear' => __DIR__ . '/../..' . '/app/Http/Middleware/TestYear.php',
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
@@ -492,6 +498,9 @@ class ComposerStaticInit9c01b18047149001a433e865e12c674e
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
+        'App\\incidencia' => __DIR__ . '/../..' . '/app/incidencia.php',
+        'App\\log' => __DIR__ . '/../..' . '/app/log.php',
+        'App\\mensaje' => __DIR__ . '/../..' . '/app/mensaje.php',
         'BeyondCode\\DumpServer\\DumpServerCommand' => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/src/DumpServerCommand.php',
         'BeyondCode\\DumpServer\\DumpServerServiceProvider' => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/src/DumpServerServiceProvider.php',
         'BeyondCode\\DumpServer\\Dumper' => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/src/Dumper.php',
@@ -532,6 +541,7 @@ class ComposerStaticInit9c01b18047149001a433e865e12c674e
         'DeepCopy\\TypeFilter\\Date\\DateIntervalFilter' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/TypeFilter/Date/DateIntervalFilter.php',
         'DeepCopy\\TypeFilter\\ReplaceFilter' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/TypeFilter/ReplaceFilter.php',
         'DeepCopy\\TypeFilter\\ShallowCopyFilter' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/TypeFilter/ShallowCopyFilter.php',
+        'DeepCopy\\TypeFilter\\Spl\\ArrayObjectFilter' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/TypeFilter/Spl/ArrayObjectFilter.php',
         'DeepCopy\\TypeFilter\\Spl\\SplDoublyLinkedList' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/TypeFilter/Spl/SplDoublyLinkedList.php',
         'DeepCopy\\TypeFilter\\Spl\\SplDoublyLinkedListFilter' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/TypeFilter/Spl/SplDoublyLinkedListFilter.php',
         'DeepCopy\\TypeFilter\\TypeFilter' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/TypeFilter/TypeFilter.php',
@@ -4270,6 +4280,7 @@ class ComposerStaticInit9c01b18047149001a433e865e12c674e
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Property\\Property' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Property/Property.php',
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Rule\\Processor' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Rule/Processor.php',
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Rule\\Rule' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Rule/Rule.php',
+        'Unisharp\\Ckeditor\\ServiceProvider' => __DIR__ . '/..' . '/unisharp/laravel-ckeditor/ServiceProvider.php',
         'UpdateHelper\\ComposerPlugin' => __DIR__ . '/..' . '/kylekatarnls/update-helper/src/UpdateHelper/ComposerPlugin.php',
         'UpdateHelper\\NotUpdateInterfaceInstanceException' => __DIR__ . '/..' . '/kylekatarnls/update-helper/src/UpdateHelper/NotUpdateInterfaceInstanceException.php',
         'UpdateHelper\\UpdateHelper' => __DIR__ . '/..' . '/kylekatarnls/update-helper/src/UpdateHelper/UpdateHelper.php',
@@ -4337,7 +4348,6 @@ class ComposerStaticInit9c01b18047149001a433e865e12c674e
         'Zend\\Diactoros\\UploadedFileFactory' => __DIR__ . '/..' . '/zendframework/zend-diactoros/src/UploadedFileFactory.php',
         'Zend\\Diactoros\\Uri' => __DIR__ . '/..' . '/zendframework/zend-diactoros/src/Uri.php',
         'Zend\\Diactoros\\UriFactory' => __DIR__ . '/..' . '/zendframework/zend-diactoros/src/UriFactory.php',
-        'frutas_seed' => __DIR__ . '/../..' . '/database/seeds/frutas_seed.php',
         'phpDocumentor\\Reflection\\DocBlock' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlock.php',
         'phpDocumentor\\Reflection\\DocBlockFactory' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlockFactory.php',
         'phpDocumentor\\Reflection\\DocBlockFactoryInterface' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlockFactoryInterface.php',
@@ -4354,11 +4364,11 @@ class ComposerStaticInit9c01b18047149001a433e865e12c674e
         'phpDocumentor\\Reflection\\DocBlock\\Tags\\Deprecated' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Deprecated.php',
         'phpDocumentor\\Reflection\\DocBlock\\Tags\\Example' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Example.php',
         'phpDocumentor\\Reflection\\DocBlock\\Tags\\Factory\\StaticMethod' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Factory/StaticMethod.php',
-        'phpDocumentor\\Reflection\\DocBlock\\Tags\\Factory\\Strategy' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Factory/Strategy.php',
         'phpDocumentor\\Reflection\\DocBlock\\Tags\\Formatter' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Formatter.php',
         'phpDocumentor\\Reflection\\DocBlock\\Tags\\Formatter\\AlignFormatter' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Formatter/AlignFormatter.php',
         'phpDocumentor\\Reflection\\DocBlock\\Tags\\Formatter\\PassthroughFormatter' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Formatter/PassthroughFormatter.php',
         'phpDocumentor\\Reflection\\DocBlock\\Tags\\Generic' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Generic.php',
+        'phpDocumentor\\Reflection\\DocBlock\\Tags\\InvalidTag' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/InvalidTag.php',
         'phpDocumentor\\Reflection\\DocBlock\\Tags\\Link' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Link.php',
         'phpDocumentor\\Reflection\\DocBlock\\Tags\\Method' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Method.php',
         'phpDocumentor\\Reflection\\DocBlock\\Tags\\Param' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Param.php',
