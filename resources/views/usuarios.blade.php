@@ -34,7 +34,7 @@
                                 <td>{{ $usuario->created_at }}</td>
                                 <td>
                                 <a href="ver/{{ $usuario->id }}" class="btn btn-primary" style="color: white">Ver</a>
-                                <a href="editar/{{ $usuario->id }}" class="btn btn-info" name="btn-editar" style="color: white">Editar</a>
+                                <a href="editarUser/{{ $usuario->id }}" class="btn btn-info" name="btn-editar" style="color: white">Editar</a>
                                 <a href="eliminar-user/{{ $usuario->id }}" onclick="return confirm('¿Seguro que desea borrar al usuario {{ $usuario->id }}?')" class="btn btn-danger" style="color: white">Eliminar</a>
                                 </td>
                             </tr>

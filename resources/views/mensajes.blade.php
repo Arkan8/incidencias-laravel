@@ -7,6 +7,8 @@
             <div class="card">
                 <div class="card-header" align=center><h1>Mensajes</h1></div>
 
+                <button class="btn">Nuevo mensaje </button>
+
                 <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
@@ -14,41 +16,22 @@
                         </div>
                     @endif
 
+                    @foreach($mensajes as $mensaje)
+                    
+                    <div class="panel">
+                        <a href="#" data-toggle="collapse" data-target="#d{{ $mensaje->id }}">
+                            <h4>✉ {{$mensaje->asunto}}</h4>
+                        </a>
+                        <div class="collapse panel-body" id="d{{ $mensaje->id }}"><p>{{$mensaje->mensaje}}</p></div>
+                    </div>
+                    <hr>
 
-                    <table class="table table-striped">
-                        <tr>
-                            <td><b>ID</td>
-                            <td><b>ID del usuario</td>
-                            <td><b>Asunto</td>
-                            <td><b>Descripción</td>
-                            <td><b>Fecha de creación</td>
-                            <td><b>Tipo</td>
-                            <td><b>Aula</td>
-                            <td><b>Acciones</td>
-                        </tr>
+                    @endforeach
 
-                        @foreach($incidencias as $incidencia)
-                            <tr>
-                                <td>{{ $incidencia->id }}</td>
-                                <td>{{ $incidencia->id_usuario }}</td>
-                                <td>{{ $incidencia->asunto }}</td>
-                                <td>{{ $incidencia->descripcion }}</td>
-                                <td>{{ $incidencia->fechacreacion }}</td>
-                                <td>{{ $incidencia->tipo }}</td>
-                                <td>{{ $incidencia->aula }}</td>
-                                <td>
-                                <a data-asunto="{{ $incidencia->asunto }}" data-descripcion="{{ $incidencia->descripcion }}" data-aula="{{ $incidencia->aula }}" data-toggle="modal" data-target="#modalEditar" href="{{ url('/editar', $incidencia->id) }}" class="btn btn-info" name="btn-editar" style="color: white">Editar</a>
-                                <a href="eliminar/{{ $incidencia->id }}" onclick="return confirm('¿Seguro que desea borrar la incidencia {{ $incidencia->id }}?')" class="btn btn-danger" style="color: white">Eliminar</a>
-                                </td>
-                            </tr>
-                        @endforeach
-                    </table>
-                </div>
 
-                <div class="align-self-center">
-                    {{ $incidencias->links() }}
-                </div>
-            </div>
+                    <!-- <script>
+                        CKEDITOR.replace('summary-ckeditor');
+                    </script> -->
         </div>
     </div>
 </div>

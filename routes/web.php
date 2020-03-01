@@ -33,4 +33,7 @@ Route::get('ver/{id}', 'UserController@ver');
 Route::get('eliminar-user/{id}', 'UserController@eliminarUser');
 
 Route::get('editar/{id}', 'UserController@editar');
+Route::get('editarUser/{id}', 'UserController@editarUser');
 Route::post('actualizar', 'UserController@actualizar');
+Route::post('actualizarUser', 'UserController@actualizarUser');
+

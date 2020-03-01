@@ -31,7 +31,11 @@ class UserController extends Controller
 
     public function mensajes(){
 
-        return view('mensajes');
+        $mensajes = DB::table('inbox')->where('user_id', Auth::User()->id)->paginate(10);
+
+        return view('mensajes', [
+            'mensajes' => $mensajes
+        ]);
     }
 
     public function logs(){
@@ -95,6 +99,14 @@ class UserController extends Controller
         ]);
     }
 
+    public function editarUser($id){
+        $editarUser = DB::table('users')->where('id', $id)->first();
+
+        return view('editarUser', [
+            'editarUser' => $editarUser,
+        ]);
+    }
+
     public function actualizar(Request $request){
         $id = $request->input('id');
         $incidenciaEditada = DB::table('incidencias')->where('id', $id)
@@ -105,5 +117,17 @@ class UserController extends Controller
                                                         'aula' => $request->input('aulaEditar'),
                                                     ));
         return redirect()->action('UserController@incidencias')->with('status', 'Incidencia editada correctamente');
+    }
+
+    public function actualizarUser(Request $request){
+        $id = $request->input('id');
+        $userEditado = DB::table('users')->where('id', $id)
+                                                    ->update(array(
+                                                        'user' => $request->input('user'),
+                                                        'email' => $request->input('email'),
+                                                        'rol' => $request->input('rol'),
+                                                        'departamento' => $request->input('departamento'),
+                                                    ));
+        return redirect()->action('UserController@usuarios')->with('status', 'Usuario editado correctamente');
     }
 }
