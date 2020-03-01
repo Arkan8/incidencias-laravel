@@ -38,6 +38,30 @@ class UserController extends Controller
         ]);
     }
 
+    public function mensajeNuevo(){
+
+        $usuarios = DB::table('users')->get();
+
+        return view('mensajeNuevo', [
+            'usuarios' => $usuarios
+        ]);
+    }
+
+    public function enviarMensaje(Request $request){
+        $user = $request->input('destino');
+        $usuario = DB::table('users')->where('user', $user)->first();
+
+        $mensaje = DB::table('inbox')->insert(array(
+            'id' => null,
+            'user_id' => $usuario->id,
+            'asunto' => $request->input('asunto'),
+            'mensaje' => $request->input('mensaje'),
+        ));
+
+        return redirect()->action('UserController@mensajes')->with('status', 'Mensaje enviado correctamente');;
+
+    }
+
     public function logs(){
         $logs = DB::table('activity_log')->orderBy('id', 'desc')->paginate(5);
 

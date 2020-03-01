@@ -26,6 +26,7 @@ Route::get('mensajes', 'UserController@mensajes')->name('mensajes');
 Route::get('logs', 'UserController@logs')->name('logs');
 
 Route::post('guardar', 'UserController@guardar');
+Route::post('enviarMensaje', 'UserController@enviarMensaje');
 
 Route::get('eliminar/{id}', 'UserController@eliminar');
 Route::get('detalle/{id}', 'UserController@detalle');
@@ -37,3 +38,4 @@ Route::get('editarUser/{id}', 'UserController@editarUser');
 Route::post('actualizar', 'UserController@actualizar');
 Route::post('actualizarUser', 'UserController@actualizarUser');
 
+Route::get('mensaje-nuevo', 'UserController@mensajeNuevo');

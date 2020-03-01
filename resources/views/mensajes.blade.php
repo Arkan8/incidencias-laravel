@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header" align=center><h1>Mensajes</h1></div>
 
-                <button class="btn">Nuevo mensaje </button>
+                <a href="mensaje-nuevo" class="btn">Nuevo mensaje </a>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -22,7 +22,7 @@
                         <a href="#" data-toggle="collapse" data-target="#d{{ $mensaje->id }}">
                             <h4>✉ {{$mensaje->asunto}}</h4>
                         </a>
-                        <div class="collapse panel-body" id="d{{ $mensaje->id }}"><p>{{$mensaje->mensaje}}</p></div>
+                        <div class="collapse panel-body" id="d{{ $mensaje->id }}">{{$mensaje->mensaje}}</div>
                     </div>
                     <hr>
 

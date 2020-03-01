@@ -15,14 +15,14 @@
                     <div class="row" style="height: 40vh;">
                         <div class="col-md-6 btn d-flex justify-content-center">
 
-                            <a id="letrasInicio" class="align-self-center" href="incidencias">
+                            <a id="letrasInicio" class="align-self-center" href="/incidencias">
                             <img src="images\incidencias.png" class="w-50 align-self-center img-fluid"><hr>
                             Incidencias
                             </a>
                         </div>
 
                         <div class="col-md-6 btn d-flex justify-content-center">
-                            <a id="letrasInicio" class="align-self-center" href="incidencias">
+                            <a id="letrasInicio" class="align-self-center" href="/mensajes">
                             <img src="images\mensajes.png" class="w-50 align-self-center img-fluid"><hr>
                             Mensajes
                             </a>
@@ -31,7 +31,7 @@
 
                     <div class="row" style="height: 40vh;">
                         <div class="col-md-6 btn d-flex justify-content-center">
-                            <a id="letrasInicio" class="align-self-center" href="incidencias">
+                            <a id="letrasInicio" class="align-self-center" href="/logs">
                             <img src="images\logs.png" class="w-50 align-self-center img-fluid"><hr>
                             Logs
                             </a>
